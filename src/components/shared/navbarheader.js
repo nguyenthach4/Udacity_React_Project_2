@@ -1,9 +1,16 @@
 import { Container, Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
+import { unSetAuthedUser } from "../../actions/users/authedUser";
 
-const NavbarHeader = (props) => {
+const NavbarHeader = ({ dispatch }, props) => {
   console.log(props.authedUser);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    dispatch(unSetAuthedUser(null));
+    navigate("/");
+  };
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -50,7 +57,9 @@ const NavbarHeader = (props) => {
                 }
                 id="navbarScrollingDropdown"
               >
-                {/* <NavDropdown.Link href="#action3">Logout</NavDropdown.Link> */}
+                <NavDropdown.Item onClick={handleLogout}>
+                  Logout
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

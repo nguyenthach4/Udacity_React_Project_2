@@ -8,7 +8,7 @@ import reducer from "./reducers";
 import middleware from "./middleware";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default store = configureStore({
+const store = configureStore({
   reducer: reducer,
   middleware: middleware,
 });

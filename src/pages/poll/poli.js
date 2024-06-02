@@ -2,6 +2,7 @@ import { Badge, Button, Card, Col, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { handleToggleQuestins } from "../../actions/questions/questions";
+import NotFound from "../../components/shared/notfound";
 
 const withRouter = (Component) => {
   const ComponentWithRouterProp = (props) => {
@@ -33,7 +34,7 @@ const Poll = (props) => {
 
     dispatch(handleToggleQuestins(props.users, authedUser, id, answer));
   };
-  return (
+  return props.id !== null ? (
     <Row style={{ background: "#eee" }}>
       <Col md={4} className="my-4">
         <Card>
@@ -100,10 +101,15 @@ const Poll = (props) => {
         </Row>
       </Col>
     </Row>
+  ) : (
+    <NotFound></NotFound>
   );
 };
 
 const mapStateToProps = ({ authedUser, questions, users }, props) => {
+  if (authedUser === null) {
+    return { id: null };
+  }
   const { id } = props.router.params;
   const voted = id in users[authedUser]?.answers;
   let optionOne =

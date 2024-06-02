@@ -32,6 +32,11 @@ const App = (props) => {
           {!loggedIn ? (
             <Routes>
               <Route path={"*"} excact element={<Login />}></Route>
+              <Route
+                path={"/question/:id"}
+                excact
+                element={<Poll></Poll>}
+              ></Route>
             </Routes>
           ) : (
             <Routes>

@@ -18,11 +18,7 @@ const Login = ({ dispatch }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     dispatch(setAuthedUser(user));
-
-    setUser("");
-
     navigate("/");
   };
 

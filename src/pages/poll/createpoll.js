@@ -41,13 +41,18 @@ const NewQuestion = ({ dispatch, id }) => {
   return (
     <div>
       <h3 className="poli-center">Create Your Own Poll</h3>
-      <Form className="poli-create" onSubmit={handleSubmit}>
+      <Form
+        className="poli-create"
+        data-testid="test-submit"
+        onSubmit={handleSubmit}
+      >
         <Form.Group
           className="poli-mb-3"
           controlId="exampleForm.ControlTextarea1"
         >
           <Form.Label>Option One</Form.Label>
           <Form.Control
+            data-testid="test-option-one"
             as="textarea"
             rows={3}
             value={optionOne}
@@ -62,6 +67,7 @@ const NewQuestion = ({ dispatch, id }) => {
         >
           <Form.Label>Option Two</Form.Label>
           <Form.Control
+            data-testid="test-option-two"
             as="textarea"
             rows={3}
             value={optionTwo}

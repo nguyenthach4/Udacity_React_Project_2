@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createpoll will match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <ul
+        class="mb-3 nav nav-tabs"
+        id="noanim-tab-example"
+        role="tablist"
+      >
+        <li
+          class="nav-item"
+          role="presentation"
+        >
+          <button
+            aria-controls="noanim-tab-example-tabpane-new-question"
+            aria-selected="true"
+            class="nav-link active"
+            data-rr-ui-event-key="new-question"
+            id="noanim-tab-example-tab-new-question"
+            role="tab"
+            type="button"
+          >
+            New Question
+          </button>
+        </li>
+        <li
+          class="nav-item"
+          role="presentation"
+        >
+          <button
+            aria-controls="noanim-tab-example-tabpane-done-question"
+            aria-selected="false"
+            class="nav-link"
+            data-rr-ui-event-key="done-question"
+            id="noanim-tab-example-tab-done-question"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            Done Question
+          </button>
+        </li>
+      </ul>
+      <div
+        class="tab-content"
+      >
+        <div
+          aria-labelledby="noanim-tab-example-tab-new-question"
+          class="tab-pane active"
+          id="noanim-tab-example-tabpane-new-question"
+          role="tabpanel"
+        >
+          <div
+            class="row"
+          />
+        </div>
+        <div
+          aria-labelledby="noanim-tab-example-tab-done-question"
+          class="tab-pane"
+          id="noanim-tab-example-tabpane-done-question"
+          role="tabpanel"
+        >
+          <div
+            class="row"
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <ul
+      class="mb-3 nav nav-tabs"
+      id="noanim-tab-example"
+      role="tablist"
+    >
+      <li
+        class="nav-item"
+        role="presentation"
+      >
+        <button
+          aria-controls="noanim-tab-example-tabpane-new-question"
+          aria-selected="true"
+          class="nav-link active"
+          data-rr-ui-event-key="new-question"
+          id="noanim-tab-example-tab-new-question"
+          role="tab"
+          type="button"
+        >
+          New Question
+        </button>
+      </li>
+      <li
+        class="nav-item"
+        role="presentation"
+      >
+        <button
+          aria-controls="noanim-tab-example-tabpane-done-question"
+          aria-selected="false"
+          class="nav-link"
+          data-rr-ui-event-key="done-question"
+          id="noanim-tab-example-tab-done-question"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          Done Question
+        </button>
+      </li>
+    </ul>
+    <div
+      class="tab-content"
+    >
+      <div
+        aria-labelledby="noanim-tab-example-tab-new-question"
+        class="tab-pane active"
+        id="noanim-tab-example-tabpane-new-question"
+        role="tabpanel"
+      >
+        <div
+          class="row"
+        />
+      </div>
+      <div
+        aria-labelledby="noanim-tab-example-tab-done-question"
+        class="tab-pane"
+        id="noanim-tab-example-tabpane-done-question"
+        role="tabpanel"
+      >
+        <div
+          class="row"
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

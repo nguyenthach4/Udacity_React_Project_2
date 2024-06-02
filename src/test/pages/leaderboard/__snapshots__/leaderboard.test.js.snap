@@ -1,73 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`dashboard will match snapshot 1`] = `
+exports[`leaderboard will match snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <ul
-        class="mb-3 nav nav-tabs"
-        id="noanim-tab-example"
-        role="tablist"
+      <table
+        class="table table-striped table-bordered table-hover"
       >
-        <li
-          class="nav-item"
-          role="presentation"
-        >
-          <button
-            aria-controls="noanim-tab-example-tabpane-new-question"
-            aria-selected="true"
-            class="nav-link active"
-            data-rr-ui-event-key="new-question"
-            id="noanim-tab-example-tab-new-question"
-            role="tab"
-            type="button"
-          >
-            New Question
-          </button>
-        </li>
-        <li
-          class="nav-item"
-          role="presentation"
-        >
-          <button
-            aria-controls="noanim-tab-example-tabpane-done-question"
-            aria-selected="false"
-            class="nav-link"
-            data-rr-ui-event-key="done-question"
-            id="noanim-tab-example-tab-done-question"
-            role="tab"
-            tabindex="-1"
-            type="button"
-          >
-            Done Question
-          </button>
-        </li>
-      </ul>
-      <div
-        class="tab-content"
-      >
-        <div
-          aria-labelledby="noanim-tab-example-tab-new-question"
-          class="tab-pane active"
-          id="noanim-tab-example-tabpane-new-question"
-          role="tabpanel"
-        >
-          <div
-            class="row"
-          />
-        </div>
-        <div
-          aria-labelledby="noanim-tab-example-tab-done-question"
-          class="tab-pane"
-          id="noanim-tab-example-tabpane-done-question"
-          role="tabpanel"
-        >
-          <div
-            class="row"
-          />
-        </div>
-      </div>
+        <thead>
+          <tr>
+            <th>
+              Users
+            </th>
+            <th>
+              Answered
+            </th>
+            <th>
+              Created
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
       <ul
         class="mb-3 nav nav-tabs"
         id="noanim-tab-example"
@@ -134,69 +89,24 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <ul
-      class="mb-3 nav nav-tabs"
-      id="noanim-tab-example"
-      role="tablist"
+    <table
+      class="table table-striped table-bordered table-hover"
     >
-      <li
-        class="nav-item"
-        role="presentation"
-      >
-        <button
-          aria-controls="noanim-tab-example-tabpane-new-question"
-          aria-selected="true"
-          class="nav-link active"
-          data-rr-ui-event-key="new-question"
-          id="noanim-tab-example-tab-new-question"
-          role="tab"
-          type="button"
-        >
-          New Question
-        </button>
-      </li>
-      <li
-        class="nav-item"
-        role="presentation"
-      >
-        <button
-          aria-controls="noanim-tab-example-tabpane-done-question"
-          aria-selected="false"
-          class="nav-link"
-          data-rr-ui-event-key="done-question"
-          id="noanim-tab-example-tab-done-question"
-          role="tab"
-          tabindex="-1"
-          type="button"
-        >
-          Done Question
-        </button>
-      </li>
-    </ul>
-    <div
-      class="tab-content"
-    >
-      <div
-        aria-labelledby="noanim-tab-example-tab-new-question"
-        class="tab-pane active"
-        id="noanim-tab-example-tabpane-new-question"
-        role="tabpanel"
-      >
-        <div
-          class="row"
-        />
-      </div>
-      <div
-        aria-labelledby="noanim-tab-example-tab-done-question"
-        class="tab-pane"
-        id="noanim-tab-example-tabpane-done-question"
-        role="tabpanel"
-      >
-        <div
-          class="row"
-        />
-      </div>
-    </div>
+      <thead>
+        <tr>
+          <th>
+            Users
+          </th>
+          <th>
+            Answered
+          </th>
+          <th>
+            Created
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
     <ul
       class="mb-3 nav nav-tabs"
       id="noanim-tab-example"

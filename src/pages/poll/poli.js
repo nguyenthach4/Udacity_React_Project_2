@@ -58,10 +58,10 @@ const Poll = (props) => {
               <ul>
                 <li>Vote rate: {props.voteOptionOne} %</li>
                 <li>
-                  {/* {props.voteOptionTwo} out of {props.voteOptionOne + props.voteOptionTwo} votes */}
+                  {props.voteOptionTwo} out of {props.voteOptionOne + props.voteOptionTwo} votes
 
-                  {props.answers === "optionTwo" && (
-                    <Badge bg="success">{"Your vote"}</Badge>
+                  {props.answers === "optionOne" && (
+                    <Badge bg="info">{"Your vote"}</Badge>
                   )}
                 </li>
               </ul>
@@ -82,10 +82,10 @@ const Poll = (props) => {
               <ul>
                 <li>Vote rate: {props.voteOptionTwo} %</li>
                 <li>
-                  {/* {props.voteOptionTwo} out of {props.voteOptionOne + props.voteOptionTwo} votes */}
+                  {props.voteOptionTwo} out of {props.voteOptionOne + props.voteOptionTwo} votes
 
                   {props.answers === "optionTwo" && (
-                    <Badge bg="success">{"Your vote"}</Badge>
+                    <Badge bg="info">{"Your vote"}</Badge>
                   )}
                 </li>
               </ul>

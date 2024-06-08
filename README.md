@@ -95,3 +95,8 @@ Your code will talk to the database via 4 methods:
 | authedUser | String | The id of the user who answered the question|
 | qid | String | The id of the question that was answered|
 | answer | String | The option the user selected. The value should be either `"optionOne"` or `"optionTwo"`|
+# Getting Started project
+* Clone or download the project.
+* Run "npm install" in the project root directory to install dependencies.
+* Run "npm start" to the launch project.
+* Run "npm test" in the project root directory to run test.

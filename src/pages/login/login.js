@@ -28,6 +28,7 @@ const Login = ({ dispatch }) => {
         aria-label="Default select example"
         onChange={handleChangeUser}
         value={user}
+        data-testid="test-user-select"
       >
         <option>Select User</option>
         {Object.values(userLst).map((user) => (
@@ -40,7 +41,7 @@ const Login = ({ dispatch }) => {
         disabled={!user}
         variant="primary"
         type="button"
-        data-testid="login-button"
+        data-testid="test-submit"
         onClick={handleSubmit}
       >
         {"Submit"}

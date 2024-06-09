@@ -1,6 +1,11 @@
 import { Badge, Button, Card, Col, Row } from "react-bootstrap";
-import { connect } from "react-redux";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { connect, useSelector } from "react-redux";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { handleToggleQuestins } from "../../actions/questions/questions";
 import NotFound from "../../components/shared/notfound";
 
@@ -16,6 +21,9 @@ const withRouter = (Component) => {
 };
 
 const Poll = (props) => {
+  const userReducer = useSelector((state) => state.authedUser);
+  const location = useLocation();
+
   const handleVote = (e, as) => {
     e.preventDefault();
 
@@ -34,7 +42,12 @@ const Poll = (props) => {
 
     dispatch(handleToggleQuestins(props.users, authedUser, id, answer));
   };
-  return props.id !== null ? (
+
+  if (!userReducer) {
+    return <Navigate to="/login" replace state={{ path: location.pathname }} />;
+  }
+
+  return props.voted !== null ? (
     <Row style={{ background: "#eee" }}>
       <Col md={4} className="my-4">
         <Card>
@@ -58,8 +71,8 @@ const Poll = (props) => {
               <ul>
                 <li>Vote rate: {props.voteOptionOne} %</li>
                 <li>
-                  {props.voteOptionTwo} out of {props.voteOptionOne + props.voteOptionTwo} votes
-
+                  {props.voteOptionTwo} out of{" "}
+                  {props.voteOptionOne + props.voteOptionTwo} votes
                   {props.answers === "optionOne" && (
                     <Badge bg="info">{"Your vote"}</Badge>
                   )}
@@ -82,8 +95,8 @@ const Poll = (props) => {
               <ul>
                 <li>Vote rate: {props.voteOptionTwo} %</li>
                 <li>
-                  {props.voteOptionTwo} out of {props.voteOptionOne + props.voteOptionTwo} votes
-
+                  {props.voteOptionTwo} out of{" "}
+                  {props.voteOptionOne + props.voteOptionTwo} votes
                   {props.answers === "optionTwo" && (
                     <Badge bg="info">{"Your vote"}</Badge>
                   )}
@@ -107,16 +120,24 @@ const Poll = (props) => {
 };
 
 const mapStateToProps = ({ authedUser, questions, users }, props) => {
-  if (authedUser === null) {
-    return { id: null };
-  }
   const { id } = props.router.params;
-  const voted = id in users[authedUser]?.answers;
-  let optionOne =
-    questions[id].optionOne === null ? 0 : questions[id].optionOne.votes.length;
+  let voted = null;
+  let optionOne = null;
+  let optionTwo = null;
+  try {
+    voted = id in users[authedUser]?.answers;
+    optionOne =
+      questions[id].optionOne === null
+        ? 0
+        : questions[id].optionOne.votes.length;
 
-  let optionTwo =
-    questions[id].optionTwo === null ? 0 : questions[id].optionTwo.votes.length;
+    optionTwo =
+      questions[id].optionTwo === null
+        ? 0
+        : questions[id].optionTwo.votes.length;
+  } catch (error) {
+    return { voted: null };
+  }
 
   const coutOptionOne = (optionOne / (optionOne = optionTwo)) * 100;
   const coutOptionTwo = (optionTwo / (optionOne = optionTwo)) * 100;

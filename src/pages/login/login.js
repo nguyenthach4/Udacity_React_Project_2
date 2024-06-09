@@ -1,12 +1,13 @@
 import { connect, useSelector } from "react-redux";
 import { Form, Button, Container } from "react-bootstrap";
 import { setAuthedUser } from "../../actions/users/authedUser";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router";
 import { useState } from "react";
 
 const Login = ({ dispatch }) => {
   const userLst = useSelector((state) => state.users);
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   const [user, setUser] = useState("");
 
@@ -19,11 +20,11 @@ const Login = ({ dispatch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(setAuthedUser(user));
-    navigate("/");
+    navigate(state?.path);
   };
 
   return (
-    <Container>
+    <Container >
       <Form.Select
         aria-label="Default select example"
         onChange={handleChangeUser}
@@ -49,5 +50,16 @@ const Login = ({ dispatch }) => {
     </Container>
   );
 };
+
+// function RequireAuth({ children }) {
+//   const { authed } = useAuth();
+//   const location = useLocation();
+
+//   return authed === true ? (
+//     children
+//   ) : (
+//     <Navigate to="/login" replace state={{ path: location.pathname }} />
+//   );
+// }
 
 export default connect()(Login);

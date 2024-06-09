@@ -12,10 +12,6 @@ import Login from "./pages/login/login";
 import { useState } from "react";
 
 const App = (props) => {
-  useEffect(() => {
-    props.dispatch(handleInitialData());
-  }, []);
-
   const userReducer = useSelector((state) => state.authedUser);
 
   const [loggedIn, setLoggedIn] = useState(false);
@@ -24,6 +20,10 @@ const App = (props) => {
     setLoggedIn(userReducer != null);
   }, [userReducer]);
 
+  useEffect(() => {
+    props.dispatch(handleInitialData());
+  }, []);
+  
   return (
     <Fragment>
       <div className="container">

@@ -1,8 +1,18 @@
 import Table from "react-bootstrap/Table";
 import { Image } from "react-bootstrap";
-import { connect } from "react-redux";
+import { connect,useSelector } from "react-redux";
+import {
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 
 const Leaderboard = (props) => {
+  const userReducer = useSelector((state) => state.authedUser);
+  const location = useLocation();
+  if (!userReducer) {
+    return <Navigate to="/login" replace state={{ path: location.pathname }} />;
+  }
+
   return (
     <Table striped bordered hover>
       <thead>

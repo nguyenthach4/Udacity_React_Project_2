@@ -1,4 +1,4 @@
-![cert-react](./cert-react.pdf)
+![cert-react](cert-react.pdf)
 
 # Employee Polls Project
 
